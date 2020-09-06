@@ -56,7 +56,7 @@
 
 #include "debug.h"
 
-#include <playerconfig.h>
+#include <playerconfig.h> 
 #if !HAVE_NANOSLEEP
   #include <replace.h>
 #endif
@@ -168,7 +168,7 @@ void PlayerClient::RunThread()
       Read();
     };
     boost::xtime xt;
-    boost::xtime_get(&xt, boost::TIME_UTC);
+    boost::xtime_get(&xt, boost::TIME_UTC_);
     // we sleep for 0 seconds
     boost::thread::sleep(xt);
   }

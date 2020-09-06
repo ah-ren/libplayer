@@ -50,8 +50,11 @@ the Player 2.0 API.
 #include <libplayercore/playercore.h>
 #include <base/imagebase.h>
 
-#include <cv.h>
+#include <opencv/cv.h>
 //#include <highgui.h>
+
+#define cvQueryHistValue_1D( hist, idx0 ) \
+    ((float)cvGetReal1D( (hist)->bins, (idx0)))
 
 #define winName "ShapeTracker"
 
@@ -554,11 +557,11 @@ void ShapeTracker::ContrastStretch( IplImage *src, IplImage *gray )
     if(index > high) this->lut[index] = 255;
   }
 
-  cvCvtPixToPlane(src, R, G, B, NULL);
+  cvSplit(src, R, G, B, NULL);
   cvLUT(R, R, this->lutMat);
   cvLUT(G, G, this->lutMat);
   cvLUT(B, B, this->lutMat);
-  cvCvtPlaneToPix(R, G, B, NULL, src);
+  cvSplit(R, G, B, NULL, src);
 
   cvReleaseImage(&R);
   cvReleaseImage(&G);

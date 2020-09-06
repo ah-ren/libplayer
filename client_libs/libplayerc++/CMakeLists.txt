@@ -64,7 +64,7 @@ IF (BUILD_PLAYERCC)
                 IF (Boost_SIGNALS_FOUND)
                     GET_FILENAME_COMPONENT (boostSignalsLib ${Boost_SIGNALS_LIBRARY} NAME_WE CACHE)
                     STRING (REGEX REPLACE "^lib" "" boostSignalsLib ${boostSignalsLib})
-                    PLAYERCC_ADD_LINK_LIB (${boostSignalsLib})
+                    # PLAYERCC_ADD_LINK_LIB (${boostSignalsLib})
                     SET (boostIncludeDir ${Boost_INCLUDE_DIR})
                     SET (HAVE_BOOST_SIGNALS TRUE CACHE INTERNAL "Is the Boost::Signals library present")
                     MESSAGE (STATUS
@@ -126,7 +126,7 @@ IF (BUILD_PLAYERCC)
                         MESSAGE (STATUS
                              "PlayerC++ client library will be built with Boost::Signals support.")
                         SET (boostSignalsLib boost_signals${BOOST_LIB_SUFFIX})
-                        PLAYERCC_ADD_LINK_LIB (${boostSignalsLib})
+                        # PLAYERCC_ADD_LINK_LIB (${boostSignalsLib})
                         PLAYERCC_ADD_INCLUDE_DIR (${Boost_INCLUDE_DIR})
                         PLAYERCC_ADD_LINK_DIR (${Boost_LIBRARY_DIRS})
                         SET (boostIncludeDir ${Boost_INCLUDE_DIRS})
@@ -227,6 +227,8 @@ IF (BUILD_PLAYERCC)
     PLAYER_ADD_LIBRARY (playerc++ ${playerccSrcs} ${playercppconfig_h})
     TARGET_LINK_LIBRARIES (playerc++ playerwkb playercommon playerinterface playerc
                            ${playerreplaceLib} ${PLAYERCC_EXTRA_LINK_LIBRARIES})
+    # TARGET_LINK_LIBRARIES (playerc++ playerwkb playercommon playerinterface playerc
+    #                         ${playerreplaceLib})
 
     SET (pkgconfigCFlags)
     SET (pkgconfigLinkDirs)

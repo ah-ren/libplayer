@@ -41,6 +41,8 @@ IF (BUILD_PLAYERCC)
         TARGET_LINK_LIBRARIES (playerc++_test playerc playerc++ playerinterface
                                playercommon playerwkb ${playerreplaceLib}
                                ${PLAYERCC_EXTRA_LINK_LIBRARIES})
+        # TARGET_LINK_LIBRARIES (playerc++_test playerc playerc++ playerinterface
+        #                       playercommon playerwkb ${playerreplaceLib})
     ENDIF (BUILD_CC_TESTS)
   ENDIF (BUILD_PLAYERCC_BOOST)
 ENDIF (BUILD_PLAYERCC)

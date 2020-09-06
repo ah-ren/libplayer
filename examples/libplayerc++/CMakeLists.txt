@@ -19,6 +19,8 @@ IF (BUILD_PLAYERCC)
         TARGET_LINK_LIBRARIES (${_name} playerc++ playerc playerinterface playercommon
                                ${playerreplaceLib} ${PLAYERC_EXTRA_LINK_LIBRARIES}
                                ${PLAYERCC_EXTRA_LINK_LIBRARIES})
+        # TARGET_LINK_LIBRARIES (${_name} playerc++ playerc playerinterface playercommon
+        #                         ${playerreplaceLib} ${PLAYERC_EXTRA_LINK_LIBRARIES})
         IF (PLAYER_OS_SOLARIS)
             TARGET_LINK_LIBRARIES (${_name} rt)
         ENDIF (PLAYER_OS_SOLARIS)

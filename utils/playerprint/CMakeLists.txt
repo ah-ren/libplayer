@@ -24,6 +24,8 @@ IF (BUILD_UTILS_PLAYERPRINT)
         PLAYER_ADD_EXECUTABLE (playerprint playerprint.cc ${getoptSrc} ${usleepSrc} ${gettimeofdaySrc})
         TARGET_LINK_LIBRARIES (playerprint playerc++ playerc playerinterface playercommon
                                ${playerreplaceLib} ${PLAYERCC_EXTRA_LINK_LIBRARIES})
+        # TARGET_LINK_LIBRARIES (playerprint playerc++ playerc playerinterface playercommon
+        #                         ${playerreplaceLib})
     ELSE (BUILD_PLAYERCC)
         MESSAGE (STATUS "playerprint will not be built - playerc++ client library is disabled")
     ENDIF (BUILD_PLAYERCC)

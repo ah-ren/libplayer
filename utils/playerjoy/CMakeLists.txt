@@ -11,6 +11,8 @@ IF (BUILD_UTILS_PLAYERJOY)
             TARGET_LINK_LIBRARIES (playerjoy playerc++ playerc playerinterface
                                    playercommon ${PLAYERC_EXTRA_LINK_LIBRARIES}
                                    ${PLAYERCC_EXTRA_LINK_LIBRARIES} ${PTHREAD_LIB})
+            # TARGET_LINK_LIBRARIES (playerjoy playerc++ playerc playerinterface
+            #                         playercommon ${PLAYERC_EXTRA_LINK_LIBRARIES} ${PTHREAD_LIB})
         ELSE (BUILD_PLAYERCC)
             MESSAGE (STATUS "playerjoy will not be built - playerc++ client library is disabled")
         ENDIF (BUILD_PLAYERCC)

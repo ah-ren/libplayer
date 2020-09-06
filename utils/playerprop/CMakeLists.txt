@@ -15,6 +15,8 @@ IF (BUILD_UTILS_PLAYERPROP)
         TARGET_LINK_LIBRARIES (playerprop playerc++ playerc playerinterface playercommon
                                ${playerreplaceLib} ${PLAYERC_EXTRA_LINK_LIBRARIES}
                                ${PLAYERCC_EXTRA_LINK_LIBRARIES})
+        # TARGET_LINK_LIBRARIES (playerprop playerc++ playerc playerinterface playercommon
+        #                         ${playerreplaceLib} ${PLAYERC_EXTRA_LINK_LIBRARIES})
     ELSE (BUILD_PLAYERCC)
         MESSAGE (STATUS "playerprop will not be built - playerc++ client library is disabled")
     ENDIF (BUILD_PLAYERCC)
